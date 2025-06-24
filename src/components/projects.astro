@@ -1,0 +1,16 @@
+---
+
+import Project from "./project.astro";
+import sivterDemo from "../assets/landing-demo.gif"
+
+---
+
+<section class="pt-15">
+    <p class="text-xl text-[#EAE6E3] font-jersey uppercase tracking-widest"> Projects </p>
+    <div class="flex flex-row flex-wrap gap-6 mt-6">
+        <Project img={sivterDemo.src} gitUrl="https://github.com/BrandonEastwell/movie-discovery-app" liveUrl="https://sivter-app.vercel.app/"
+                 title="Sivter Movie Discovery" tools={["Next", "React", "TailwindCSS", "TypeScript", "Prisma", "PostgreSQL"]} client:load />
+        <Project img={sivterDemo.src} gitUrl="https://github.com/BrandonEastwell/movie-discovery-app" liveUrl="https://sivter-app.vercel.app/"
+                 title="Sivter Movie Discovery" tools={["Next", "React", "TailwindCSS", "TypeScript", "Prisma", "PostgreSQL"]} client:load />
+    </div>
+</section>
