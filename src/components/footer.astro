@@ -1,0 +1,29 @@
+---
+import linkedin from '../assets/linkedin.svg';
+import github from '../assets/github.svg';
+---
+
+<div class="flex flex-col">
+    <section class="flex flex-col font-jersey mt-6 border-1 border-white rounded-2xl p-6">
+        <div class="flex flex-row justify-between">
+            <p class="text-4xl text-[#EAE6E3] tracking-wide">We have got to talk.</p>
+        </div>
+        <p class="text-xl text-[#EAE6E3] mt-1">Whether you are looking to collaborate on a project,
+            or just want to talk, pleeeeease feel free to reach out to me : )</p>
+        <div class="flex flex-row gap-4 place-items-center mt-4">
+            <a class="flex flex-row gap-2" href="https://www.linkedin.com/in/brandon-eastwell-40056631b/" target="_blank">
+                <img class="h-6 opacity-80 transition duration-300 hover:opacity-100 cursor-pointer" src={linkedin.src}  alt="" />
+                <span class="text-[#EAE6E3]">LinkedIn</span>
+            </a>
+            <a class="flex flex-row gap-2" href="https://github.com/BrandonEastwell/" target="_blank">
+                <img class="h-6 opacity-80 transition duration-300 hover:opacity-100 cursor-pointer" src={github.src}  alt="" />
+                <span class="text-[#EAE6E3]">GitHub</span>
+            </a>
+        </div>
+        <div class="py-2 px-4 border mt-4 bg-[#EAE6E3] rounded-lg">
+            <span class="text-xl text-[#000]">or just email me at brandoneastwell@gmail.com</span>
+        </div>
+    </section>
+    <span class="text-xl font-jersey text-[#EAE6E3] mt-4 place-self-center">brandon eastwell ©2025</span>
+    <span class="text-xl font-jersey text-[#EAE6E3] place-self-center">London, UK</span>
+</div>

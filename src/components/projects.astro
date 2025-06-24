@@ -2,6 +2,8 @@
 
 import Project from "./project.astro";
 import sivterDemo from "../assets/landing-demo.gif"
+import raDemo from "../assets/ra-demo.gif"
+import lrsDemo from "../assets/lrs-services.vercel.app_(iPhone 14 Pro Max).png"
 
 ---
 
@@ -10,7 +12,9 @@ import sivterDemo from "../assets/landing-demo.gif"
     <div class="flex flex-row flex-wrap gap-6 mt-6">
         <Project img={sivterDemo.src} gitUrl="https://github.com/BrandonEastwell/movie-discovery-app" liveUrl="https://sivter-app.vercel.app/"
                  title="Sivter Movie Discovery" tools={["Next", "React", "TailwindCSS", "TypeScript", "Prisma", "PostgreSQL"]} client:load />
-        <Project img={sivterDemo.src} gitUrl="https://github.com/BrandonEastwell/movie-discovery-app" liveUrl="https://sivter-app.vercel.app/"
-                 title="Sivter Movie Discovery" tools={["Next", "React", "TailwindCSS", "TypeScript", "Prisma", "PostgreSQL"]} client:load />
+        <Project img={raDemo.src} gitUrl="https://github.com/BrandonEastwell/ra-set-finder" liveUrl="https://github.com/BrandonEastwell/ra-set-finder"
+                 title="RA Set Finder" tools={["React", "TypeScript", "TailwindCSS", "Express", "Chrome Extension"]} client:load />
+        <Project img={lrsDemo.src} gitUrl="https://github.com/BrandonEastwell/lrs-services" liveUrl="https://lrs-services.vercel.app/"
+                 title="LRS Exterior Services" tools={["React", "TypeScript", "TailwindCSS", "Express"]} client:load />
     </div>
 </section>
