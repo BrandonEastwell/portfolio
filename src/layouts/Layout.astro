@@ -1,6 +1,5 @@
 ---
-import Resume from "../components/resume.astro";
-import Links from "../components/links.astro";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 <!doctype html>
 <html lang="en">
@@ -14,6 +13,7 @@ import Links from "../components/links.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>Brandon Eastwell's Portfolio</title>
 	</head>
+	<SpeedInsights />
 	<body class="min-w-screen min-h-screen h-auto w-full bg-gradient-to-bl from-[#212121] from-5% to-[#1A1A1B] to-50%">
 		<slot />
 	</body>
