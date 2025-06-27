@@ -9,10 +9,10 @@ import arrow from '../assets/arrow-right-up-line.svg'
     <a class="absolute w-full h-full" href={liveUrl} target="_blank">
         <div class="content absolute bg-[#1A1A1B]/50 flex flex-col w-full h-full max-h-[250px] z-20 p-6 gap-1.5 justify-between">
             <a class="h-6 w-6 z-50" href={gitUrl} target="_blank">
-                <img class="opacity-80 transition duration-300 hover:scale-110 hover:opacity-100" src={github.src}  alt="" />
+                <img class="opacity-80 transition duration-300 hover:scale-110 hover:opacity-100" src={github.src}  alt="github icon link" />
             </a>
             <div>
-                <p class="text-3xl font-jersey text-[#EAE6E3]">{ title } <img class="arrow opacity-0 inline h-7" src={arrow.src} alt=""></p>
+                <p class="text-3xl font-jersey text-[#EAE6E3]">{ title } <img class="arrow opacity-0 inline h-7" src={arrow.src} alt="arrow"></p>
                 <div class="flex flex-row flex-wrap space-x-1">
                     { tools.map(tool => (
                             <Tool tool={tool} />
@@ -21,7 +21,7 @@ import arrow from '../assets/arrow-right-up-line.svg'
             </div>
         </div>
     </a>
-    <img class="gif block blur-[3px] w-full h-full object-cover" src={img} alt="" />
+    <img class="gif blur-[3px] w-full object-cover" src={img} alt="project demonstration background" />
 </div>
 
 <script>
@@ -47,10 +47,10 @@ import arrow from '../assets/arrow-right-up-line.svg'
 
             const direction = parseInt(project.dataset.index?project.dataset.index:"0") % 2 === 0 ? -100 : 100;
             gsap.fromTo(project,
-                { x: direction, opacity: 0 },
+                { x: -100, autoAlpha: 0 },
                 {
                     x: 0,
-                    opacity: 1,
+                    autoAlpha: 1,
                     duration: 0.8,
                     ease: 'power2.out',
                     scrollTrigger: {

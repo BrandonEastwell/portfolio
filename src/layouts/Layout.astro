@@ -7,11 +7,14 @@ import Links from "../components/links.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Brandon Eastwell's Portfolio</title>
 	</head>
-	<body class="relative max-w-screen min-h-screen h-auto w-full bg-gradient-to-bl from-[#212121] from-5% to-[#1A1A1B] to-50%">
+	<body class="min-w-screen min-h-screen h-auto w-full bg-gradient-to-bl from-[#212121] from-5% to-[#1A1A1B] to-50%">
 		<slot />
 	</body>
 </html>
