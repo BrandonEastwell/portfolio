@@ -2,14 +2,14 @@
 import Tool from "./tool.astro";
 ---
 
-<section class="pt-15 font-jersey text-[#EAE6E3]">
-    <p class="text-xl font-jersey uppercase tracking-widest"> Experience </p>
+<section class="exp-container pt-15 font-jersey text-[#EAE6E3]">
+    <p class="exp-heading text-xl font-jersey uppercase tracking-widest"> Experience </p>
     <div class="flex flex-col mt-6">
-        <span class="text-lg text-[#EAE6E3]/40 uppercase tracking-wide"> March, 2025 - Present </span>
-        <span class="text-xl mt-0.5 "> Freelance Full Stack Developer, Eastys Accessories </span>
-        <p class="text-lg text-[#EAE6E3]/80 mt-0.5"> Built a full-stack inventory management system for an eBay-based store using the eBay REST API,
+        <span class="exp-date text-lg text-[#EAE6E3]/40 uppercase tracking-wide"> March, 2025 - Present </span>
+        <span class="exp-title text-xl mt-0.5 "> Freelance Full Stack Developer, Eastys Accessories </span>
+        <p class="exp-desc text-lg text-[#EAE6E3]/80 mt-0.5"> Built a full-stack inventory management system for an eBay-based store using the eBay REST API,
             automating stock updates and order syncing, reducing manual input by 100%. </p>
-        <div class="flex flex-row flex-wrap mt-3 gap-1">
+        <div class="exp-tools flex flex-row flex-wrap mt-3 gap-1">
             <Tool tool="React" />
             <Tool tool="TypeScript" />
             <Tool tool="REST" />
@@ -18,4 +18,23 @@ import Tool from "./tool.astro";
             <Tool tool="CI/CD" />
         </div>
     </div>
+
 </section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger)
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.exp-container',
+            start: 'top 60%'
+        }});
+
+    tl.fromTo(".exp-heading", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 })
+        .fromTo(".exp-date", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 })
+        .fromTo(".exp-title", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 }, "-=0.2")
+        .fromTo(".exp-desc", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 }, "-=0.2")
+        .fromTo(".exp-tools", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 }, "-=0.2")
+
+</script>

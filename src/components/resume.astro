@@ -3,7 +3,7 @@ import download from '../assets/download.svg';
 import resume from '../../public/BRANDONEASTWELL_FULLSTACK_RESUME.docx.pdf'
 ---
 <a href={resume} download>
-    <div id="download" class="relative overflow-hidden min-w-[100px] max-w-[100px] flex flex-row gap-1 border-1 border-white px-3 rounded-lg place-items-center justify-center cursor-pointer opacity-80 transition duration-300 hover:opacity-100">
+    <div class="download relative overflow-hidden min-w-[100px] max-w-[100px] flex flex-row gap-1 border-1 border-white px-3 rounded-lg place-items-center justify-center cursor-pointer opacity-80 transition duration-300 hover:opacity-100">
         <div class="mask absolute w-full h-full right-0 bg-white invisible"></div>
         <img class="h-5" src={download.src}  alt="" />
         <p class="text-white font-jersey">Resume</p>
@@ -13,17 +13,33 @@ import resume from '../../public/BRANDONEASTWELL_FULLSTACK_RESUME.docx.pdf'
 
 <script>
     import { gsap } from "gsap";
-    let btn = document.getElementById("download")
+    let buttons = document.querySelectorAll(".download")
 
-    btn?.addEventListener("click", () => {
-        gsap.to(btn.querySelector(".mask"), { startAt: { y: 40, autoAlpha: 1 }, y: 0, autoAlpha: 1, transition: 0.2, ease: "power2.in" })
+    function clickHandler(event: any) {
+        let container = event.target.closest('.download')
+
+        gsap.to(container.querySelector(".mask"), { startAt: { y: 40, autoAlpha: 1 }, y: 0, autoAlpha: 1, transition: 0.2, ease: "power2.in" })
+
         setTimeout(() => {
-            let text = btn?.querySelector("p")
-            let icon = btn?.querySelector("img")
+            let text = container.querySelector("p")
+            let icon = container.querySelector("img")
             if (text) text.textContent = "downloaded"
             if (icon) icon.style.display = "none"
-            gsap.to(btn.querySelector(".mask"), { y: -40, autoAlpha: 1, transition: 0.2, ease: "power2.out"})
+            gsap.to(container.querySelector(".mask"), { y: -40, autoAlpha: 1, transition: 0.2, ease: "power2.out"})
+            sessionStorage.setItem("resumeDownloaded", "true")
         }, 500)
-    })
+    }
+
+    for (let btn of buttons) {
+        if (sessionStorage.getItem("resumeDownloaded") === "true") {
+            let text = btn.querySelector("p")
+            let icon = btn.querySelector("img")
+            if (text) text.textContent = "downloaded"
+            if (icon) icon.style.display = "none"
+        }
+
+        btn.addEventListener("click", clickHandler)
+    }
+
 
 </script>

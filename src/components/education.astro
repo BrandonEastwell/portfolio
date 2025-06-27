@@ -2,21 +2,11 @@
 import uniLogo from "../assets/University_of_Essex_logo.svg"
 ---
 
-<section class="flex flex-row place-items-center mt-6 gap-1 font-jersey">
-    <img src={uniLogo.src} alt="" class="uni logo h-16 invisible" />
+<section class="flex flex-row place-items-center mt-8 gap-1 font-jersey overflow-hidden">
+    <img src={uniLogo.src} alt="" class="uni logo h-16" />
     <div>
         <span class="time text-sm text-[#EAE6E3]/40 uppercase tracking-wide"> Sept, 2021 - July, 2024 </span>
         <p class="title text-xl text-[#EAE6E3]"> University of Essex Graduate </p>
         <p class="course text-xl text-[#EAE6E3]"> Bachelor of Science in Computer Science </p>
     </div>
 </section>
-
-<script>
-    import { gsap } from "gsap";
-
-    let tl = gsap.timeline();
-    tl.fromTo(".uni", { opacity: 0, visibility: "visible", filter: 'blur(5px)', }, { opacity: 1, filter: 'blur(0px)', duration: 0.2, delay: 1.2 })
-        .fromTo(".time", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" })
-        .fromTo(".title", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.2")
-        .fromTo(".course", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.2")
-</script>

@@ -1,0 +1,9 @@
+---
+import arrow from '../assets/arrow-right-up-line.svg'
+let { text } = Astro.props
+---
+
+<div class="flex flex-row place-items-center mt-12 gap-1">
+    <img class="opacity-100 inline h-5 rotate-90" src={arrow.src} alt="">
+    <p class="text-1xl font-jersey text-[#EAE6E3] uppercase"> { text } </p>
+</div>

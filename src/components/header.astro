@@ -3,7 +3,7 @@ import pic from "../assets/20250118_163141.jpg"
 import Education from "./education.astro";
 ---
 
-<section class="mt-8 h-auto">
+<section class="mt-16 h-auto">
     <div class="font-jersey text-[#EAE6E3] flex flex-col justify-center">
         <div class="flex flex-row justify-between place-items-center">
             <div class="relative">
@@ -11,15 +11,15 @@ import Education from "./education.astro";
                 <h1 class="name text-6xl">BRANDON</h1>
                 <h1 class="name text-6xl">EASTWELL</h1>
             </div>
-            <img src={pic.src} alt="" class="pic w-36 aspect-square object-cover rounded-full place-self-center invisible" />
+            <img src={pic.src} alt="" class="pic w-36 aspect-square object-cover rounded-full place-self-center" />
         </div>
-        <p class="role text-2xl font-jersey text-[#EAE6E3] tracking-wide mt-3">A FULL STACK ENGINEER.</p>
+        <p class="role text-2xl font-jersey text-[#EAE6E3] tracking-wide mt-2">A FULL STACK ENGINEER.</p>
     </div>
     <div class="flex flex-col mt-4 max-[550px]:hidden">
         <p class="desc text-xl font-jersey text-[#EAE6E3]/80">Born in 2003. With a mission to bring my creative expression to full stack development, I am forever exploring the craft of building robust
             systems — focusing on pixel perfect interfaces, scalable architecture and efficient backend solutions.</p>
     </div>
-    <div class="flex flex-col justify-center mt-4 min-[550px]:hidden">
+    <div class="flex flex-col justify-center mt-8 min-[550px]:hidden">
         <p class="desc text-xl font-jersey text-[#EAE6E3]/80">Born in 2003. With a mission to bring my creative expression to full stack development, I am forever exploring the craft of building robust
             systems — focusing on pixel perfect interfaces, scalable architecture and efficient backend solutions.</p>
     </div>
@@ -28,15 +28,24 @@ import Education from "./education.astro";
 
 <script>
     import { gsap } from "gsap";
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    gsap.registerPlugin(ScrollTrigger)
     const nameEle = document.querySelectorAll(".name");
-
-    gsap.fromTo(".pic", { opacity: 0, visibility: "visible", filter: 'blur(5px)', }, { opacity: 1, filter: 'blur(0px)', duration: 1 })
     let tl = gsap.timeline();
-    tl.fromTo(nameEle[0], { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
-        .fromTo(nameEle[1], { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, "-=0.1")
-        .fromTo(nameEle[2], { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.2")
-        .fromTo(".role", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out"  }, "-=0.4")
-        .fromTo(".desc", { opacity: 0 }, { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.4" )
+
+
+    if (sessionStorage.getItem('initialLoad') === null) {
+        gsap.fromTo(".pic", { opacity: 0, filter: 'blur(5px)', }, { opacity: 1, filter: 'blur(0px)', duration: 1 })
+        tl.fromTo(nameEle[0], { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
+            .fromTo(nameEle[1], { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, "-=0.2")
+            .fromTo(nameEle[2], { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.2")
+            .fromTo(".role", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out"  }, "-=0.4")
+            .fromTo(".desc", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.3" )
+            .fromTo(".uni", { opacity: 0, filter: 'blur(5px)', }, { opacity: 1, filter: 'blur(0px)', duration: 0.2 }, "-=0.2")
+            .fromTo(".time", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.2")
+            .fromTo(".title", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.3")
+            .fromTo(".course", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.3")
+
+        sessionStorage.setItem('initialLoad', "true")
+    }
+
+
 </script>

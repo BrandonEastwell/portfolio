@@ -4,12 +4,12 @@ import github from '../assets/github.svg';
 import Resume from "./resume.astro";
 ---
 
-<div class="flex flex-row gap-4">
-    <a class="h-6 w-6 z-50" href="https://www.linkedin.com/in/brandon-eastwell-40056631b/" target="_blank">
+<>
+    <a class="h-6 w-6 z-50" href="https://www.linkedin.com/in/brandoneastwell/" target="_blank">
         <img class="h-6 opacity-80 transition duration-300 hover:opacity-100 cursor-pointer" src={linkedin.src}  alt="" />
     </a>
     <a class="h-6 w-6 z-50" href="https://github.com/BrandonEastwell/" target="_blank">
         <img class="h-6 opacity-80 transition duration-300 hover:opacity-100 cursor-pointer" src={github.src}  alt="" />
     </a>
     <Resume client:load />
-</div>
+</>
