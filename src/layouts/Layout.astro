@@ -1,5 +1,6 @@
 ---
 import  SpeedInsights  from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
 ---
 <!doctype html>
 <html lang="en">
@@ -14,6 +15,7 @@ import  SpeedInsights  from "@vercel/speed-insights/astro"
 		<title>Brandon Eastwell's Portfolio</title>
 	</head>
 	<SpeedInsights />
+	<Analytics />
 	<body class="min-w-screen min-h-screen h-auto w-full bg-gradient-to-bl from-[#212121] from-5% to-[#1A1A1B] to-50%">
 		<slot />
 	</body>
